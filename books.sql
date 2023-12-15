@@ -11,9 +11,11 @@ CREATE TABLE Books (
     stock_count INT
 );
 
+
 ALTER TABLE Books
 ADD COLUMN publisher VARCHAR(255),
 ADD COLUMN num_pages INT;
+
 
 INSERT INTO Books (title, author, genre, published_year, isbn, price, rating, stock_count, publisher, num_pages)
 VALUES
@@ -29,3 +31,8 @@ SET
   stock_count = stock_count - 1   
 WHERE
   title = 'War and Peace';
+
+
+GRANT SELECT, UPDATE ON Books TO 'martin'@'localhost';
+
+REVOKE DELETE ON Books FROM 'martin'@'localhost';
