@@ -1,0 +1,2 @@
+# develhope-sql
+esercizi sql
